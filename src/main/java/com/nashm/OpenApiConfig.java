@@ -10,7 +10,7 @@ public class OpenApiConfig {
     public GroupedOpenApi publicApi() {
         return GroupedOpenApi.builder()
                 .group("date-time-service")
-                .pathsToMatch("/current-datetime")
+                .pathsToMatch("/current-datetime", "/entries")
                 .build();
     }
 }

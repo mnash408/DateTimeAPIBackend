@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 @RestController
 @Tag(name = "Date and Time Service", description = "Provides current date and time information")
@@ -47,5 +48,20 @@ public class DateTimeController {
         repository.save(entry);
 
         return new DateTimeResponse(formattedDateTime);
+    }
+
+    @GetMapping("/entries")
+    @Operation(
+            summary = "Get All DateTime Entries",
+            description = "Returns all date and time entries stored in the database",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "Successfully retrieved all date and time entries"
+                    )
+            }
+    )
+    public List<DateTimeEntry> getAllEntries() {
+        return repository.findAll();
     }
 }

@@ -11,7 +11,7 @@
         <version>3.4.4</version>
     </parent>
 
-    <groupId>com.example</groupId>
+    <groupId>com.nashm</groupId>
     <artifactId>date-time-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
